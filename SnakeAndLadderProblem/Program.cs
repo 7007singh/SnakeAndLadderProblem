@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace SnakeAndLadderProblem
 {
@@ -10,7 +7,10 @@ namespace SnakeAndLadderProblem
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Snake and Ladder Program");
+            Console.WriteLine("_____Welcome to Snake and Ladder Program_____");
+            SnakeLadder snakeLadder = new SnakeLadder();
+            snakeLadder.Start();
+            Console.ReadLine();
         }
     }
 }
