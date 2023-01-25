@@ -8,7 +8,7 @@ namespace SnakeAndLadderProblem
         const int LADDER = 1;
         const int SNAKE_BITE = 2;
         const int NO_PLAY = 3;
-        public int position, dieNumber, option;
+        public int position, dieNumber, option, dieCount = 0;
 
         Random random = new Random();
         public void CheckOption()
@@ -45,7 +45,9 @@ namespace SnakeAndLadderProblem
                 {
                     position = Convert.ToInt32(position<=100);
                 }
+                dieCount++;
             }
+            Console.WriteLine("{0} Times Die Rolled", dieCount);
         }
     }
 }
