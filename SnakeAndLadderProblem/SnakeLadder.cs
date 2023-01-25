@@ -8,14 +8,16 @@ namespace SnakeAndLadderProblem
         const int LADDER = 1;
         const int SNAKE_BITE = 2;
         const int NO_PLAY = 3;
-        public int position, dieNumber, option, player;
+        public int position, dieNumber, option;
 
         Random random = new Random();
         public void CheckOption()
         {
+            while (position <= 100)
+            {
                 option = random.Next(1, 4);
                 dieNumber = random.Next(1, 7);
-                Console.WriteLine("Dice Number " + dieNumber);
+                Console.WriteLine("\nDice Number " + dieNumber);
                 switch (option)
                 {
                     case LADDER:
@@ -33,6 +35,13 @@ namespace SnakeAndLadderProblem
                         Console.WriteLine("Player Position: " + position);
                         break;
                 }
+                if(position < 1)
+                {
+                    position = 0;
+                    Console.WriteLine("\nAfter moving position below 0");
+                    Console.WriteLine("Players Position: " + position);
+                }
+            }
         }
     }
 }
