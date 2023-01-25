@@ -43,7 +43,7 @@ namespace SnakeAndLadderProblem
                 }
                 if(position > 100)
                 {
-                    Console.WriteLine("Player Position of one step back: " + (position = Convert.ToInt32(position<100)));
+                    position = Convert.ToInt32(position<=100);
                 }
             }
         }
