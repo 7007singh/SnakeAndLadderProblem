@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading;
 
 namespace SnakeAndLadderProblem
 {
@@ -9,7 +8,7 @@ namespace SnakeAndLadderProblem
         {
             Console.WriteLine("_____Welcome to Snake and Ladder Program_____");
             SnakeLadder snakeLadder = new SnakeLadder();
-            snakeLadder.Start();
+            snakeLadder.CheckOption();
             Console.ReadLine();
         }
     }

@@ -1,23 +1,38 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SnakeAndLadderProblem
 {
     internal class SnakeLadder
     {
-        public int position = 0;
-        public int player;
+        const int LADDER = 1;
+        const int SNAKE_BITE = 2;
+        const int NO_PLAY = 3;
+        public int position, dieNumber, option, player;
 
         Random random = new Random();
-        public void Start()
-        { 
-            int dieNumber = random.Next(1, 7);
-            Console.WriteLine("dice Number: " + dieNumber);
-            player = position;
-            Console.WriteLine("Position of Player: " + position);
+        public void CheckOption()
+        {
+            option = random.Next(1, 4);
+            dieNumber = random.Next(1, 7);
+            Console.WriteLine("Dice Number " + dieNumber);
+            switch (option)
+            {
+                case LADDER:
+                    Console.WriteLine("Ladder");
+                    position += dieNumber;
+                    Console.WriteLine("Player Position: " + position);
+                    break;
+                case SNAKE_BITE:
+                    Console.WriteLine("Snake Bite");
+                    position -= dieNumber;
+                    Console.WriteLine("Player Position: " + position);
+                    break;
+                case NO_PLAY:
+                    Console.WriteLine("No Play");
+                    position += position;
+                    Console.WriteLine("Player Position: " + position);
+                    break;
+            }
         }
     }
 }
