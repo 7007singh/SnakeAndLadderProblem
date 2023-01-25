@@ -13,7 +13,7 @@ namespace SnakeAndLadderProblem
         Random random = new Random();
         public void CheckOption()
         {
-            while (position <= 100)
+            while (position < 100)
             {
                 option = random.Next(1, 4);
                 dieNumber = random.Next(1, 7);
@@ -40,6 +40,10 @@ namespace SnakeAndLadderProblem
                     position = 0;
                     Console.WriteLine("\nAfter moving position below 0");
                     Console.WriteLine("Players Position: " + position);
+                }
+                if(position > 100)
+                {
+                    Console.WriteLine("Player Position of one step back: " + (position = Convert.ToInt32(position<100)));
                 }
             }
         }
